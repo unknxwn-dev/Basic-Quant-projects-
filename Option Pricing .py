@@ -25,7 +25,8 @@ output = {}
 d1 = (np.log(S0/K) + (r + (1/2*(sigma ** 2)))* T) / (sigma * (np.sqrt(T)))
 d2 = d1 - (sigma * (np.sqrt(T)))
 
-Nd1 = norm.cdf(d1) # Standard Normal Cumulative Distribution Function
+# Standard Normal Cumulative Distribution Function
+Nd1 = norm.cdf(d1) # Analytical Delta
 Nd2 = norm.cdf(d2)
 
 blackscholes_price = (S0 * Nd1) - ((K * np.exp(-r * T)) * Nd2 ) #Black Scholes Formulae
